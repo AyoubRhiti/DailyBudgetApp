@@ -6,6 +6,8 @@
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.375" />
         <entry key="app/src/main/res/layout/activity_splash_screen.xml" value="0.14895833333333333" />
         <entry key="app/src/main/res/layout/input_layout.xml" value="0.28229166666666666" />
+        <entry key="app/src/main/res/layout/retrieve_layout.xml" value="0.25" />
+        <entry key="app/src/main/res/layout/update_layout.xml" value="0.1" />
       </map>
     </option>
   </component>

@@ -56,8 +56,8 @@ public class MainActivity extends AppCompatActivity {
     private String onlineUserId = "";
     private ProgressDialog loader;
 
-    //private TodayItemsAdapter todayItemsAdapter;
-    //private List<Data> myDataList;
+    private TodayItemsAdapter todayItemsAdapter;
+    private List<Data> myDataList;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -84,7 +84,7 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-       /* recyclerView = findViewById(R.id.recyclerView);
+        recyclerView = findViewById(R.id.recyclerView);
         LinearLayoutManager linearLayoutManager = new LinearLayoutManager(this);
         linearLayoutManager.setReverseLayout(true);
         linearLayoutManager.setStackFromEnd(true);
@@ -95,12 +95,12 @@ public class MainActivity extends AppCompatActivity {
         todayItemsAdapter = new TodayItemsAdapter(MainActivity.this, myDataList);
         recyclerView.setAdapter(todayItemsAdapter);
 
-        readItems();*/
+        readItems();
 
 
     }
 
-    /*private void readItems(){
+    private void readItems(){
 
         DateFormat dateFormat = new SimpleDateFormat("dd-MM-yyyy");
         Calendar cal = Calendar.getInstance();
@@ -137,7 +137,7 @@ public class MainActivity extends AppCompatActivity {
 
             }
         });
-    }*/
+    }
 
     private void addItemSpentOn() {
 
@@ -183,7 +183,6 @@ public class MainActivity extends AppCompatActivity {
                 }
                 else {
                     loader.setTitle("Adding Item");
-                    loader.setMessage("Please wait as the item is being added...");
                     loader.setCanceledOnTouchOutside(false);
                     loader.show();
 
