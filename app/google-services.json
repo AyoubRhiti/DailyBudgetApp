@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "65167728522",
+    "project_id": "budging-app",
+    "storage_bucket": "budging-app.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:65167728522:android:90a3a18587e88f8a633273",
+        "android_client_info": {
+          "package_name": "com.example.budgingapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "65167728522-q4gtfi7n4ii01tmdua86cgghhekveaqs.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.budgingapp",
+            "certificate_hash": "59cbcadc02ad68734c0674231fbfca8240771d76"
+          }
+        },
+        {
+          "client_id": "65167728522-sg81bop95bquudttv75d4a2udhboubjs.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBU-hPC-ET0Pw4ZEkBKxuoUYx8jpZyxuDA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "65167728522-sg81bop95bquudttv75d4a2udhboubjs.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
