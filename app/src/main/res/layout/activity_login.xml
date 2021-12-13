@@ -12,7 +12,7 @@
     <ImageView
         android:layout_width="200dp"
         android:layout_height="200dp"
-        android:src="@drawable/managment"/>
+        android:src="@drawable/ic_logo"/>
 
     <EditText
         android:id="@+id/email"
@@ -62,9 +62,10 @@
         android:id="@+id/loginQn"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Dont have an account, SignUp"
+        android:text="SignUp"
         android:gravity="center"
-        android:textStyle="bold"/>
+        android:textColor="#5908DF "
+        />
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -79,39 +80,8 @@
             android:layout_weight="3"
             android:background="@color/colorPrimaryDark" />
 
-        <TextView
-            style="@style/viewParent.headerText.NoMode"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="6"
-            android:text="Use Other Methods"
-            android:textAlignment="center"
-            android:textSize="12sp"/>
-
-        <View
-            android:layout_width="0dp"
-            android:layout_height="1dp"
-            android:layout_weight="3"
-            android:background="@color/colorPrimaryDark" />
     </LinearLayout>    
-    
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="30dp"
-        android:gravity="center">
-        
-        <ImageView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:src="@drawable/ic_facebook"
-            android:layout_marginRight="15dp"/>
 
-        <ImageView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:src="@drawable/ic_google_plus"/>
-    </LinearLayout>
 
 
 
