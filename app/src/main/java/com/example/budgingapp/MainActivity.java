@@ -26,6 +26,11 @@ import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.anychart.AnyChart;
+import com.anychart.AnyChartView;
+import com.anychart.chart.common.dataentry.DataEntry;
+import com.anychart.chart.common.dataentry.ValueDataEntry;
+import com.anychart.charts.Pie;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
@@ -46,6 +51,8 @@ import java.util.Map;
 
 public class MainActivity extends AppCompatActivity {
 
+    private Button statBtn;
+
     private Toolbar toolbar;
     private TextView amountTxtview;
     private RecyclerView recyclerView;
@@ -63,6 +70,14 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        statBtn  = findViewById(R.id.statisticBtn);
+        statBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                openStatisticView();
+            }
+        });
 
         toolbar  = findViewById(R.id.toolbar);
         //setSupportActionBar(toolbar);
@@ -97,7 +112,11 @@ public class MainActivity extends AppCompatActivity {
 
         readItems();
 
+    }
 
+    private void openStatisticView() {
+        Intent intent = new Intent(this, StatisticActivity.class);
+        startActivity(intent);
     }
 
     private void readItems(){

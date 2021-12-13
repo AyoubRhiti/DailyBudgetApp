@@ -49,6 +49,13 @@
                 app:backgroundTint="#FF6200EE"
                 android:src="@drawable/ic_plus"
                 app:fabSize="normal"/>
+
+            <Button
+                android:id="@+id/statisticBtn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Statistic"
+                android:layout_gravity="bottom" />
         </androidx.coordinatorlayout.widget.CoordinatorLayout>
     </LinearLayout>
 </LinearLayout>
