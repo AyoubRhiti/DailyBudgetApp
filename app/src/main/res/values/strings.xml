@@ -1,7 +1,7 @@
 <resources>
     <string name="app_name">Budging App</string>
     <string-array name="items">
-        <item>select item</item>
+        <item>Select item</item>
         <item>Transport</item>
         <item>Food</item>
         <item>Entertainment</item>

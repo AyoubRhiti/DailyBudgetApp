@@ -24,9 +24,9 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="100dp"
-                android:textAllCaps="true"
                 android:fontFamily="@font/poppins_bold"
                 android:text="Food"
+                android:textAllCaps="true"
                 android:textColor="@color/colorAccent"
                 android:textSize="18dp"
                 android:textStyle="bold" />
@@ -52,8 +52,8 @@
                 android:layout_marginBottom="23dp"
                 android:fontFamily="@font/poppins_medium"
                 android:text="MAD"
-                android:textSize="14dp"
                 android:textColor="#FB5B5B"
+                android:textSize="14dp"
                 android:textStyle="bold" />
 
             <TextView

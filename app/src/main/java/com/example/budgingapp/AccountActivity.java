@@ -12,13 +12,16 @@ import android.widget.Button;
 import android.widget.TextView;
 
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
+
 import com.google.firebase.database.DatabaseReference;
 
 public class AccountActivity extends AppCompatActivity {
 
     private Toolbar settingsToolbar;
-    //private TextView userEmail;
+    private TextView userEmail;
     private Button logout;
+    FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
 
 
     @Override
@@ -26,7 +29,17 @@ public class AccountActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_account);
 
+        settingsToolbar = findViewById(R.id.my_Feed_Toolbar);
+        /*setSupportActionBar(settingsToolbar);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        getSupportActionBar().setDisplayShowHomeEnabled(true);
+        getSupportActionBar().setTitle("Account Information");*/
+
+
         logout = findViewById(R.id.logoutBtn);
+        userEmail  = findViewById(R.id.userEmail);
+
+        userEmail.setText(user.getEmail());
 
         logout.setOnClickListener(new View.OnClickListener() {
             @Override
