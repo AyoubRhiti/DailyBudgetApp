@@ -52,24 +52,24 @@ class TodayItemsAdapter extends RecyclerView.Adapter<TodayItemsAdapter.ViewHolde
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
 
         final Data data = myDataList.get(position);
-        holder.item.setText("Item: "+data.getItem());
-        holder.amount.setText("Spent: $"+data.getAmount());
-        holder.date.setText("Today: "+data.getDate());
-        holder.notes.setText("Note: "+data.getNotes());
+        holder.item.setText(data.getItem());
+        holder.amount.setText("-"+data.getAmount());
+       // holder.date.setText("Today: "+data.getDate());
+        holder.notes.setText(data.getNotes());
 
 
         switch (data.getItem()){
             case "Transport":
-                holder.imageView.setImageResource(R.drawable.ic_transport);
+                holder.imageView.setImageResource(R.drawable.ic_bus);
                 break;
             case "Food":
-                holder.imageView.setImageResource(R.drawable.ic_food);
+                holder.imageView.setImageResource(R.drawable.ic_burger);
                 break;
             case "Entertainment":
-                holder.imageView.setImageResource(R.drawable.ic_entertainment);
+                holder.imageView.setImageResource(R.drawable.ic_play);
                 break;
             case "Other":
-                holder.imageView.setImageResource(R.drawable.ic_other);
+                holder.imageView.setImageResource(R.drawable.ic_more);
                 break;
             default:
                 throw new IllegalStateException("Unexpected value: " + data.getItem());
@@ -179,10 +179,10 @@ class TodayItemsAdapter extends RecyclerView.Adapter<TodayItemsAdapter.ViewHolde
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
 
-            item = itemView.findViewById(R.id.item);
-            amount = itemView.findViewById(R.id.amount);
-            date = itemView.findViewById(R.id.date);
-            notes  = itemView.findViewById(R.id.note);
+            item = itemView.findViewById(R.id.text_item);
+            amount = itemView.findViewById(R.id.text_amount);
+            //date = itemView.findViewById(R.id.date);
+            notes  = itemView.findViewById(R.id.text_note);
             imageView = itemView.findViewById(R.id.imageView);
         }
     }

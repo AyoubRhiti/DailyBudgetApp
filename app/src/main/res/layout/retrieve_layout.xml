@@ -1,64 +1,85 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:orientation="vertical"
-    android:elevation="10dp"
-    app:cardElevation="10dp"
-    android:layout_margin="10dp"
-    android:layout_height="wrap_content">
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="#FAFAFA">
 
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
-        <LinearLayout
-            android:id="@+id/linearLayout"
-            android:layout_width="250dp"
-            android:orientation="vertical"
-            android:layout_height="wrap_content">
+        android:layout_height="70dp"
+        android:layout_marginStart="5dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginBottom="5dp">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="0dp"
+            android:layout_marginRight="10dp"
+            android:background="@color/colorPrimary">
 
             <TextView
-                android:layout_width="match_parent"
+                android:id="@+id/text_item"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="item name"
-                android:textColor="#000"
-                android:textStyle="bold"
-                android:textSize="18sp"
-                android:id="@+id/item"/>
+                android:layout_marginLeft="100dp"
+                android:textAllCaps="true"
+                android:fontFamily="@font/poppins_bold"
+                android:text="Food"
+                android:textColor="@color/colorAccent"
+                android:textSize="18dp"
+                android:textStyle="bold" />
 
             <TextView
-                android:layout_width="match_parent"
+                android:id="@+id/text_note"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textSize="16sp"
-                android:text="$ 0"
-                android:id="@+id/amount"
-                android:textColor="#000"/>
+                android:layout_marginLeft="100dp"
+                android:layout_marginTop="32dp"
+                android:fontFamily="@font/poppins_medium"
+                android:text="Pizza"
+                android:textSize="14dp"
+                android:textStyle="bold" />
 
             <TextView
-                android:layout_width="match_parent"
+                android:layout_width="50dp"
                 android:layout_height="wrap_content"
-                android:textSize="16sp"
-                android:text="note"
-                android:id="@+id/note"
-                android:textColor="#000"/>
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentBottom="true"
+                android:layout_marginEnd="3dp"
+                android:layout_marginRight="0dp"
+                android:layout_marginBottom="23dp"
+                android:fontFamily="@font/poppins_medium"
+                android:text="MAD"
+                android:textSize="14dp"
+                android:textColor="#FB5B5B"
+                android:textStyle="bold" />
 
             <TextView
-                android:layout_width="match_parent"
+                android:id="@+id/text_amount"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textSize="16sp"
-                android:text="date"
-                android:id="@+id/date"
-                android:textColor="#000"/>
-        </LinearLayout>
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentBottom="true"
+                android:layout_marginEnd="57dp"
+                android:layout_marginRight="0dp"
+                android:layout_marginBottom="22dp"
+                android:fontFamily="@font/poppins_medium"
+                android:text="-100"
+                android:textColor="#FB5B5B"
+                android:textSize="15dp"
+                android:textStyle="bold" />
+        </RelativeLayout>
 
         <ImageView
             android:id="@+id/imageView"
-            android:layout_width="70dp"
-            android:layout_height="70dp"
-            android:layout_toEndOf="@id/linearLayout"
-            android:src="@drawable/ic_house"
-            android:layout_margin="10dp"/>
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:background="#F1F1F1"
+            android:padding="10dp"
+            android:src="@drawable/ic_play" />
 
     </RelativeLayout>
 
-</androidx.cardview.widget.CardView>
+</RelativeLayout>
