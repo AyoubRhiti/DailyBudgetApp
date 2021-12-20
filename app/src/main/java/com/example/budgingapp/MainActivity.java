@@ -3,19 +3,28 @@ package com.example.budgingapp;
 
 
 import androidx.annotation.NonNull;
+import androidx.appcompat.app.ActionBarDrawerToggle;
 import androidx.appcompat.app.AppCompatActivity;
 
 import androidx.appcompat.widget.SearchView;
 import androidx.appcompat.widget.Toolbar;
+import androidx.core.view.GravityCompat;
+import androidx.drawerlayout.widget.DrawerLayout;
+import androidx.navigation.Navigation;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.app.AlertDialog;
 import android.app.ProgressDialog;
+import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.preference.PreferenceManager;
 import android.text.TextUtils;
 import android.util.Log;
+import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuInflater;
@@ -36,13 +45,16 @@ import com.anychart.charts.Pie;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
+import com.google.android.material.navigation.NavigationView;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.Query;
 import com.google.firebase.database.ValueEventListener;
+import com.google.mlkit.common.sdkinternal.SharedPrefManager;
 
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
@@ -52,9 +64,14 @@ import java.util.List;
 import java.util.Locale;
 import java.util.Map;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
 
     private Button statBtn;
+
+    FirebaseUser currentuser;
+
+    private SharedPreferences.Editor editor;
+    Context context;
 
     private Toolbar toolbar;
     private TextView amountTxtview;
@@ -69,11 +86,32 @@ public class MainActivity extends AppCompatActivity {
     private TodayItemsAdapter todayItemsAdapter;
     private List<Data> myDataList;
 
+    private TextView userEmail;
+
+    private DrawerLayout drawerLayout;
+    private NavigationView navigationView;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         Log.d("main", "begin");
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        /*-------------------------*/
+        drawerLayout=findViewById(R.id.drawer_layout);
+        navigationView=findViewById(R.id.nav_view);
+
+        navigationView.setItemIconTintList(null);
+
+        navigationView.bringToFront();
+
+        navigationView.setNavigationItemSelectedListener(this);
+        navigationView.setCheckedItem(R.id.nav_Home);
+
+
+        View headerview = navigationView.getHeaderView(0);
+        userEmail = headerview.findViewById(R.id.Hemail);
+
 
         statBtn  = findViewById(R.id.statisticBtn);
         statBtn.setOnClickListener(new View.OnClickListener() {
@@ -92,7 +130,10 @@ public class MainActivity extends AppCompatActivity {
         fab = findViewById(R.id.fab);
 
         mAuth = FirebaseAuth.getInstance();
+        currentuser = mAuth.getCurrentUser();
         onlineUserId = mAuth.getCurrentUser().getUid();
+
+        userEmail.setText(currentuser.getEmail());
         ref = FirebaseDatabase.getInstance().getReference().child("expenses").child(onlineUserId);
         loader = new ProgressDialog(this);
 
@@ -294,14 +335,58 @@ public class MainActivity extends AppCompatActivity {
         return true;
     }
 
-
+    int State = 0 ;
 
     @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+
         if (item.getItemId() == R.id.account){
             Intent intent = new Intent(MainActivity.this, AccountActivity.class);
             startActivity(intent);
         }
+
+        if (State == 0) {
+            drawerLayout.openDrawer(GravityCompat.START);
+            State = 1;
+
+        } else{
+            drawerLayout.closeDrawer(GravityCompat.START);
+            State = 0;
+
+        }
         return super.onOptionsItemSelected(item);
     }
+
+    @Override
+    public boolean onNavigationItemSelected(MenuItem menuItem) {
+        Intent intent = null;
+
+        switch (menuItem.getItemId()) {
+            case R.id.nav_Home:
+                break;
+
+            case R.id.nav_Account:
+                intent = new Intent(MainActivity.this, AccountActivity.class);
+                startActivity(intent);
+                break;
+
+            case R.id.nav_Stats:
+                intent = new Intent(MainActivity.this, StatisticActivity.class);
+                startActivity(intent);
+                break;
+            case R.id.nav_logout:
+                SharedPreferences sharedPreferences = PreferenceManager
+                        .getDefaultSharedPreferences(this);
+                editor = sharedPreferences.edit();
+                editor.clear();
+                editor.apply();
+                intent = new Intent(MainActivity.this, LoginActivity.class);
+                startActivity(intent);
+                break;
+
+        }
+
+        return true;
+    }
+
 }

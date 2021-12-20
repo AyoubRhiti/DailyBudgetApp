@@ -2,14 +2,22 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
+
     <item android:title="My Account"
         android:id="@+id/account"
-        app:showAsAction="always"
+        app:showAsAction="never"
         android:icon="@drawable/ic_person"/>
+
     <item android:title="Search"
         android:id="@+id/search_nau"
         app:actionViewClass="androidx.appcompat.widget.SearchView"
         android:icon="@drawable/ic_search"
         app:showAsAction="ifRoom|withText"/>
+    <item android:title="Nev_bar"
+        android:id="@+id/Tool"
+        android:icon="@drawable/ic_menu"
+        android:gravity="right"
+        app:showAsAction="always"/>
+
 
 </menu>

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="220dp"
+
+    android:gravity="bottom"
+    android:padding="20dp">
+
+    <ImageView
+        android:layout_width="75dp"
+        android:layout_height="75dp"
+        android:src="@drawable/pp" >
+
+    </ImageView>
+
+    <TextView
+        android:id="@+id/Hemail"
+        android:layout_width="301dp"
+        android:layout_height="39dp"
+        android:layout_marginBottom="8dp"
+        android:textSize="17dp"
+        android:text="hello"
+        android:textAllCaps="true"
+        android:textColor="#000"
+        android:fontFamily="@font/poppins_medium"
+        android:textStyle="normal|italic" />
+
+</LinearLayout>
