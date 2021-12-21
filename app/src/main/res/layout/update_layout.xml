@@ -11,6 +11,7 @@
         android:layout_height="wrap_content"
         android:text="Update this item?"
         android:textColor="#000"
+        android:textStyle="bold"
         android:gravity="center"/>
 
 
@@ -21,22 +22,24 @@
         android:textSize="20sp"
         android:textColor="#000"
         android:id="@+id/item"/>
+
     <EditText
         android:id="@+id/amount"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="Enter amount"
-        android:textColor="#000"
         android:inputType="number"
-        />
+        android:minHeight="48dp"
+        android:textColor="#000" />
 
     <EditText
+        android:id="@+id/note"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="Enter note"
+        android:minHeight="48dp"
         android:textColor="#000"
-        android:id="@+id/note"
-        />
+         />
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -71,7 +74,6 @@
                 android:textAllCaps="false"
                 android:textColor="#fff"
                 android:textStyle="bold"
-                android:background="#000"
                 android:layout_margin="2dp"
                 />
         </RelativeLayout>

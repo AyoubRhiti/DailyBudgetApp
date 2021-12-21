@@ -113,13 +113,6 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         userEmail = headerview.findViewById(R.id.Hemail);
 
 
-        statBtn  = findViewById(R.id.statisticBtn);
-        statBtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                openStatisticView();
-            }
-        });
 
         toolbar  = findViewById(R.id.toolbar);
         //setSupportActionBar(toolbar);
@@ -190,7 +183,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                     int pTotal = Integer.parseInt(String.valueOf(total));
                     totalAmount+=pTotal;
 
-                    amountTxtview.setText("Total Day's Spending: $"+totalAmount);
+                    amountTxtview.setText("Total Day's Spending: "+totalAmount+ " MAD");
 
                 }
 
